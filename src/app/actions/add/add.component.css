@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-group {
+    margin: 2rem 1rem 0 0 ;
+    width: 100%;
+}
+
+.form-label {
+
+    width: 100%;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+.form-control {
+    width: 100%;
+}
+
+.p-error {
+    font-size: 1.3rem;
+}
+
+
+@media screen and (min-width:1024px) {
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .form-group {
+        margin: 2rem 1rem;
+        width: 30%;
+    }
+    
+    .form-label {
+    
+        width: 100%;
+        margin-right: 1rem;
+        font-size: 1.3rem;
+    }
+    .form-control {
+        width: 80%;
+    }
+    
+}

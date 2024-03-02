@@ -1,0 +1,92 @@
+<app-nav-bar></app-nav-bar>
+
+<section class="dashBoard">
+    <p>Dashboard</p>
+    <div class="card-container">
+        
+        <div class="card"> 
+            <div>
+                <a [routerLink]="'admin'">
+                    <div class="img-box float-left">
+                        <img class="card-img" src="../../../assets/images/dashboard.svg" alt="dashboard image">
+                    </div>
+                </a>
+                <a class="route" [routerLink]="'admin'">
+                    <p class="dashboard-title">Admin Actions</p>
+                </a>
+                
+            </div>
+            <div class="graph">
+                <p-chart class="graph" type="doughnut" [data]="data" [options]="options"></p-chart>
+            </div>
+        </div>
+        <div class="card"> 
+            <div>
+                <a [routerLink]="'add'">
+                    <div class="img-box float-left">
+                        <img class="card-img" src="../../../assets/images/add.svg" alt="add user image">
+                    </div>
+                </a>
+                <a  class="route" [routerLink]="'add'">
+                    <p class="dashboard-title"  (click)="setButtonStatus()" >Add Users</p>
+                </a>
+            </div>
+            <div class="graph">
+                <p-chart class="pie" type="pie" [data]="pieData" [options]="pieOPtion"></p-chart>
+            </div>
+        </div>
+        <div class="card"> 
+            <div>
+                <a [routerLink]="'/dashboard'">
+                    <div class="img-box float-left">
+                        <img class="card-img" src="../../../assets/images/edit.svg" alt="edit user image">
+                    </div>
+                </a>
+                <a class="route" [routerLink]="'/dashboard'">
+                    <p class="dashboard-title">Edit Users</p>
+                </a>
+            </div>
+
+            <div class="graph">
+                <p-chart  type="doughnut" [data]="pieDataTwo" [options]="pieOPtionTwo"></p-chart>
+            </div>
+        </div>
+        <div class="card"> 
+            <div>
+                <a [routerLink]="'deleted'">
+                    <div class="img-box float-left">
+                        <img class="card-img" src="../../../assets/images/delete.svg" alt="">
+                    </div>
+                </a>
+                <a  class="route" [routerLink]="'deleted'">
+                    <p class="dashboard-title">Deleted Users</p>
+                </a>
+            </div>
+            <div class="graph">
+                <p-chart  type="polarArea" [data]="pieDataTwo" [options]="pieOPtionTwo"></p-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="main">
+
+    <div class="main-container">
+
+        <div class="main-box-one">
+            
+
+            <h1 class="main-box-title"> Main Content</h1>
+            <router-outlet></router-outlet>
+        </div>
+        <div class="main-box-two">
+
+            <app-action></app-action>  
+        </div>
+
+    </div>
+    
+</main>
+
+<app-footer></app-footer>
+

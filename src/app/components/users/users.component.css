@@ -1,0 +1,33 @@
+.card {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+.card-container {
+
+    display: flex;
+    flex-direction: column;
+}
+
+:host ::ng-deep.p-card:hover {
+    background-color:#0651ddc4;
+    color: white;
+}
+@media screen and (min-width:1024px) {
+
+    .card-container {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 30%;
+        margin: 2rem 2rem 0 0;
+    }
+
+
+    
+}

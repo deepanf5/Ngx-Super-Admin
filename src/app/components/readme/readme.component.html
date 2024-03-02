@@ -1,0 +1,30 @@
+<div class="card">
+    <p>
+       NGX-super-admin application is build with angular-v16 and fir-base v-7.6.1 application. This  covers core of concepts of angular curd operations, Routing,Signals,reactive forms, form validations google login much more.... 
+    </p>
+    <p-divider></p-divider>
+    <p> working of this applications</p>
+    <p>admin can able to add,edit, delete the users</p>
+    <div class="card">
+        <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+            <ng-template pTemplate="marker" let-event>
+                <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                    <i class="icon" [ngClass]="event.icon"></i>
+                </span>
+                <!-- <img src="" alt=""> -->
+            </ng-template>
+            <ng-template pTemplate="content" let-event>
+                <p-card [header]="event.status">
+                    <img *ngIf="event.image" src="{{event.image}}" [alt]="event.name" width="200" class="shadow-2" />
+                    <p>
+                        {{event.text}}
+                    </p>
+                </p-card>
+            </ng-template>
+        </p-timeline>
+    </div>
+    <p-divider></p-divider>
+    <p-button  pRipple   icon="pi pi-backward" [routerLink]="'/dashboard'"  label="Back" styleClass="p-button-Info p-button-text"></p-button>
+</div>
+
+<h1>   </h1>

@@ -1,0 +1,25 @@
+<section class="deleted-user-section">
+
+
+    <ng-container *ngIf="deletedUser.length === 0">
+        <p class="nodata-title">no data</p>
+        <img class="nodata" src="../../../assets/images/nodata.svg" alt="no data pic">
+
+    </ng-container>
+
+    <div class="card-container" >
+        <div class="card" *ngFor="let user of deletedUser">
+            <p-card header="Title">
+                <p class="m-0">
+                   {{user.firstName}}
+                   
+                </p>
+                <p class="m-0">
+                   {{user.email}}
+                   
+                </p>
+            </p-card>            
+        </div>
+    </div>
+    <p-button  pRipple   icon="pi pi-backward" [routerLink]="'/dashboard'"  label="Back" styleClass="p-button-Info p-button-text"></p-button>
+</section>

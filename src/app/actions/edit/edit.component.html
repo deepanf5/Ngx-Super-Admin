@@ -1,0 +1,95 @@
+<section class="forms">
+    <form class="form" [formGroup]="editUser">
+        <div class="form-group">
+            <label  class="form-label" htmlFor="FirstName">FirstName</label>
+            <input name="FirstName"  pKeyFilter="alpha" formControlName="firstName" class="form-control" type="text" pInputText  />
+            <div><small class="p-error" *ngIf="editUser.get('firstName')?.touched && editUser.get('firstName')?.invalid"> please enter firstName</small></div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="LastName">LastName</label>
+            <input name="LastName"   pKeyFilter="alpha" formControlName="lastName" class="form-control" type="text" pInputText />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('lastName')?.touched && editUser.get('lastName')?.invalid"> please enter lastName</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="Email">user Email</label>
+            <input name="Email" pKeyFilter="alpha" [pKeyFilter]="blockChars"  formControlName="email" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('email')?.touched && editUser.get('email')?.invalid"> please enter you're email</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="Gender">Gender </label>
+            <p-selectButton [options]="stateOptions" formControlName="gender" optionLabel="label" optionValue="value"></p-selectButton>
+        </div>
+    
+       
+        <div class="form-group">
+            <label  class="form-label" htmlFor="mobileNumber">mobileNumber</label>
+            <input pKeyFilter="num" name="mobileNumber"formControlName="mobileNumber"  class="form-control" mask="99-9999999999"
+            placeholder="99-999999" type="tel" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('mobileNumber')?.touched && editUser.get('mobileNumber')?.invalid"> please enter cell phone number</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="address">address</label>
+            <input name="address"  pKeyFilter="alpha" formControlName="address" class="form-control" type="text" pInputText />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('address')?.touched && editUser.get('address')?.invalid"> please enter you're address</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="state">current state</label>
+            <input name="state"  pKeyFilter="alpha" formControlName="state" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('state')?.touched && editUser.get('state')?.invalid"> please enter the state</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="city">current city </label>
+            <input name="city"  pKeyFilter="alpha" formControlName="city" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('city')?.touched && editUser.get('city')?.invalid"> please enter the  city</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="zipCode">zip code</label>
+            <input name="zipCode"  pKeyFilter="num" formControlName="zipcode" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('zipcode')?.touched && editUser.get('zipcode')?.invalid"> please enter the zipcode</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="company">company</label>
+            <input name="company"  pKeyFilter="alpha" formControlName="company" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('company')?.touched && editUser.get('company')?.invalid"> please enter you're company</small></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label" htmlFor="zipCode">user status</label>
+            <input name="status"  pKeyFilter="alpha" formControlName="status" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('status')?.touched && editUser.get('status')?.invalid"> please enter you're status</small></div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label  class="form-label" htmlFor="rating">user rating</label>
+            <input name="rating"  pKeyFilter="num" formControlName="rating" class="form-control" type="text" pInputText  />
+            <div>
+                <div><small class="p-error" *ngIf="editUser.get('rating')?.touched && editUser.get('rating')?.invalid"> please enter you're zipcode</small></div>
+            </div>
+        </div>
+        
+        
+      <div class="form-group">
+      <p-button [disabled]="editUser.invalid" [loading]="loading" (click)="submit()" (click)="load()" icon="pi pi-check" label="Update" styleClass="p-button-success p-button-text"></p-button>
+      <p-button  [loading]="loading"  [routerLink]="'/dashboard'" (click)="load()" icon="pi pi-check" label="cancel" styleClass="p-button-warning p-button-text"></p-button>
+      <p-button  pRipple   icon="pi pi-backward" [routerLink]="'/dashboard'"  label="Back" styleClass="p-button-Info p-button-text"></p-button>
+      </div>
+  </form>
+  <p-toast position="top-right"></p-toast>
+  </section>

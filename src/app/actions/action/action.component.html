@@ -1,0 +1,32 @@
+<section class="action">
+    <div class="action-content">
+
+        <img class="user-profile" src="../../../assets/logo.svg" alt="use-profile">
+    </div>
+
+    <div class="user-details-list">
+        <ul class="user-details-list">
+            <li class="user-details-item"><p class="template">firstName: </p> <p class="user-detail">{{userDetails.firstName}}</p></li>
+            <li class="user-details-item"><p class="template">lastName: </p> <p class="user-detail">{{userDetails.lastName}}</p></li>
+            <li class="user-details-item"><p class="template">email: </p> <p class="user-detail">{{userDetails.email}}</p></li>
+            <li class="user-details-item"><p class="template">gender: </p> <p class="user-detail">{{userDetails.gender}}</p></li>
+            <li class="user-details-item"><p class="template">address: </p> <p class="user-detail">{{userDetails.address}}</p></li>
+            <li class="user-details-item"><p class="template">state : </p> <p class="user-detail">{{userDetails.state}}</p></li>
+            <li class="user-details-item"><p class="template">city:  </p> <p class="user-detail">{{userDetails.city}}</p></li>
+            <li class="user-details-item"><p class="template">zipcode: </p> <p class="user-detail">{{userDetails.zipcode}}</p></li>
+        </ul>
+    </div>
+
+    <p-button pRipple label="Add" [class.disable]="setAddButton"  (click)="add()" styleClass="p-button-outlined p-button-success"></p-button>
+ 
+     <p-button pRipple  [class.disable]="disable"  label="Edit" [routerLink]="'edit'" [disabled]="disable"   styleClass="p-button-outlined p-button-warning"></p-button>
+ 
+    <p-button pRipple  [class.disable]="disable" label="Delete" [disabled]="disable" (click)="delete()"  styleClass="p-button-outlined p-button-danger"></p-button>
+    <p-button class="reset"  pRipple  [class.disable]="disable" label="reset" [disabled]="disable" (click)="reset()"  styleClass="p-button-outlined p-button-Info"></p-button>
+
+    <!-- <p-confirmPopup></p-confirmPopup>
+    <p-button " icon="pi pi-check" label="Confirm"></p-button> -->
+    <p-toast position="top-right"></p-toast>
+</section>
+
+

@@ -1,0 +1,41 @@
+
+<section class="login">
+    
+    <div class="login-form-container">        
+        
+        <form class="form" [formGroup]="loginForm">
+            <div class="form-group">
+                <div class="hero-container">
+                    <h2>welcome to ngx-super-admin application</h2>
+                </div>   
+                <label htmlFor="username">Username</label>
+                    <input class="form-control" pInputText id="username" formControlName="userName" />
+            </div>
+            <div class="form-group">            
+                <label htmlFor="password">password </label>
+                <p-password class="password" formControlName="password" class="form-control"  id="password"></p-password>
+                
+            </div>
+
+            <div class="form-group">
+                <p-button  (click)="verifyAdmin()" label="login" styleClass="p-button-primary p-button-text"></p-button>
+            </div>
+
+            
+        <div class="signUpWith">
+            <p class="otherOption">or</p>
+            <p-button  (click)="loginWithGoogle()" class="btn-google" label="sign up with google" icon="pi pi-google" styleClass="p-button-outlined"></p-button>
+
+        </div>
+        </form>
+        
+    </div>
+    <div class="login-form-image">
+        <div class="image-container">
+            <img class="form-pic" src="../../../assets/images/Admin.svg" alt="form-pic">
+                </div>
+        </div>
+        
+<p-toast position="top-right"></p-toast>
+
+</section>

@@ -1,0 +1,23 @@
+<section class="admin">
+    <div class="admin-container">
+        <img class="admin-pic" src="../../../assets/images/logo.svg" alt="">
+    </div>
+    <div class="admin-actions-details">
+        <div class="knob-container">
+            <p-knob [(ngModel)]="adding"></p-knob>
+            <p class="action-title">adding</p>
+        </div>
+        <div class="knob-container">
+            <p-knob [(ngModel)]="editing"></p-knob>
+            <p class="action-title">editing</p>
+        </div>
+        <div class="knob-container">
+            <p-knob  [(ngModel)]="deleting"></p-knob>
+            <p class="action-title">deleting</p>
+        </div>
+    </div>
+    <div class="btn-container">
+        <p-button class="back"  pRipple   icon="pi pi-backward" [routerLink]="'/dashboard'"  label="Back" styleClass="p-button-Info p-button-text"></p-button>
+    </div>
+    
+</section>

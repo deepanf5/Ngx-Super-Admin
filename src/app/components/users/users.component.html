@@ -1,0 +1,21 @@
+<section class="user-section">
+    <div class="card-container" >
+        <div class="card"   *ngFor="let user of allUsers;trackBy:trackByFn">
+                <p-card   header="{{user.firstName}}" (click)="sendDateToAction(user)">
+    
+                        <p class="m-0">
+                            {{user.company}}
+                            
+                         </p>
+                    
+                  
+                    <p class="m-0">
+                       {{user.email}}
+                       
+                    </p>
+                </p-card>                     
+        </div>
+    </div>
+
+</section>
+

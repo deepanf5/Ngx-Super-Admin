@@ -1,0 +1,32 @@
+<header class="header">
+    <nav class="nav">
+        <p-button type="button" class="mr-2" (click)="sidebarVisible1 = true" icon="pi pi-bars"></p-button>
+        <p class="admin-name" *ngIf="adminName">{{adminName}}</p>
+        <a href=""><img class="logo" src="../../../assets/images/Admin.svg" alt="logo"><small>ngx-admin</small></a>
+        <div class="user-container">
+            <ul class="user-details">
+                <li class="user-item"><i class="pi pi-bell" pBadge (click)="op2.toggle($event)" value="2"></i></li>
+                <li class="user-item"><p-avatar (click)="op.toggle($event)"  class="user-profile-pic" image="https://www.pngfind.com/pngs/m/139-1399351_build-a-1-point-perspective-grid-in-illustrator.png" styleClass="mr-2" size="large" shape="circle" shape="circle"></p-avatar>
+                <!-- <li class="user-item"><p-avatar (click)="op.toggle($event)"  class="user-profile-pic" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" styleClass="mr-2" size="large" shape="circle" shape="circle"></p-avatar> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<p-sidebar [(visible)]="sidebarVisible1" position="left">
+<p class="side-nav-title"><i class="pi pi-bolt"></i> ngx-super-admin </p>
+<p-menu  [model]="items"></p-menu>
+</p-sidebar>
+
+<p-overlayPanel #op>
+   <p class="log-out-icon" (click)="signOut()"> <i class="pi pi-sign-out"></i> Log-out</p>
+</p-overlayPanel>
+<p-overlayPanel #op2>
+   <p>you have 2 new message</p>
+</p-overlayPanel>
+
+<p-toast position="top-right" key="tl"></p-toast>
+
+
